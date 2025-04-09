@@ -1,0 +1,23 @@
+{
+  "name": "stripe-backend-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "cors": "^2.8.5",
+    "micro": "^10.0.1",
+    "next": "^15.2.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "stripe": "^18.0.0"
+  }
+}
