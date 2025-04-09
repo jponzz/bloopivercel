@@ -13,8 +13,10 @@ const supabase = createClient(
 
 // Middleware para CORS
 const corsMiddleware = cors({
-  origin: '*', // Reemplaza con tu dominio en producción
-  methods: ['POST', 'OPTIONS'],
+  origin: true,
+  methods: ['POST', 'OPTIONS', 'GET'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 });
 
 function runMiddleware(req, res, fn) {
@@ -29,13 +31,21 @@ function runMiddleware(req, res, fn) {
 }
 
 export default async function handler(req, res) {
+  console.log('Request received:', {
+    method: req.method,
+    headers: req.headers,
+    body: req.body
+  });
+
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
   try {
+    console.log('Applying CORS middleware...');
     // Aplicar CORS
     await runMiddleware(req, res, corsMiddleware);
+    console.log('CORS middleware applied successfully');
 
     const { priceId, userId } = req.body;
 
