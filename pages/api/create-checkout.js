@@ -49,8 +49,8 @@ export default async function handler(req, res) {
           quantity: 1,
         },
       ],
-      success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/cancel`,
+      success_url: 'https://bloopi.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: 'https://bloopi.vercel.app/cancel',
       client_reference_id: userId,
     });
 
