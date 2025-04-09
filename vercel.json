@@ -5,12 +5,5 @@
       "src": "package.json",
       "use": "@vercel/next"
     }
-  ],
-  "env": {
-    "STRIPE_SECRET_KEY": "@stripe_secret_key",
-    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "@next_public_stripe_publishable_key",
-    "STRIPE_WEBHOOK_SECRET": "@stripe_webhook_secret",
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key"
-  }
+  ]
 }
